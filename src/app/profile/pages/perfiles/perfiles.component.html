@@ -1,0 +1,14 @@
+
+
+<div class="menu">
+    <div class="logo" routerLink="{{data.url}}" *ngFor="let data of lateral">
+        <label>{{data.titulo}}</label>
+        <img src="{{data.icon}}">
+    </div>
+
+    <div>
+        <router-outlet></router-outlet>
+        
+    </div>
+</div>
+

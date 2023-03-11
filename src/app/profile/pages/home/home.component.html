@@ -1,0 +1,81 @@
+<main class="d-flex flex-nowrap main"  >
+    
+
+        <div class="navbar-vertical-content"  id="menu">
+
+            <div class="nav nav-pills flex-column m-auto ">
+                <div class="nav-item" class=" usuario">
+                    <img class="border-radius" src="assets/img/usuario.png">
+                </div>
+                <div class="nav-item user-data d-flex justify-content-center">
+                    <p class="user-name nav-item">Firstname L.</p>
+                </div>
+                <div class="nav-item user-data d-flex justify-content-center">
+
+                    <p class="user-role nav-item"> rol_name</p>
+                </div>
+
+            </div>
+
+            <hr class="arriba">
+
+            <ul class="navbar-nav flex-column " *ngFor=" let data of menu" (click)="onSelect(data)">
+           
+                <div class="nav-item-wrapper">                    
+                    <li class="nav-item" routerLink="{{data.url}}" >
+                        <a class="nav-link dropdown-indicator label-1" role="button" data-bs-toggle="collapse"
+                            aria-expanded="false" aria-controls="e-commerce">
+                            <div class="d-flex align-items-center">
+                                <span class="imgs">
+                                    <img src="{{data.icon}}" id="icont">
+                                </span>
+                                <span class="nav-link-text" >
+                                    <p>{{data.titulo}}</p>
+                                </span>
+                            </div>
+
+                        </a>
+                    </li>
+                </div>
+              
+            </ul>
+
+            <hr class="abajo">
+            <div class="navbar-vertical-footer" class="icon-close">
+
+                <div routerLink="data.url" click="#sidenav.toggle()" class="navbar-vertical-footer-text ms-2 ">
+                    <div >
+
+                        <button class="btn navbar-vertical button">
+
+                            <span  class="img-exit">
+
+                                <img src="{{exit.icon}}" class="img-exits">
+
+                                <span class="uil uil-arrow-from-right fs-0"></span>
+                            </span>
+                            {{exit.titulo}}
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <div class="b-example-divider b-example-vr"></div>
+
+    
+    <div class="card overflow-hidden body">
+        <div class="menu">
+            <div class="logo">
+              <label>{{selectedMenu.titulo}}</label>
+            </div>
+          
+          </div>
+
+        <router-outlet></router-outlet>
+    </div>
+
+
+</main>
